@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="web.css" />
+    <script src="web.js" defer></script>
+    <title>Web Design Mastery | Adventure Parallax</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+      </nav>
+  </header>
+  <section id="home"></section>
+  <div class="parallax__container">
+    <img src="assets/bg-1.jpg" alt="parallax" />
+    <img id="bg-2" src="assets/bg-2.png" alt="parallax" />
+    <h1 id="title">Maniniyot</h1>
+    <img id="bg-3" src="assets/bg-3.png" alt="parallax" />
+  </div>
+  <section id="about"></section>
+  <section class="about">
+    <div class="image__gallary">
+      <div class="image__card" id="image__card-1">
+        <img src="assets/grid-1.jpg" alt="grid" />
+      </div>
+      <div class="image__card" id="image__card-2">
+        <img src="assets/grid-2.jpg" alt="grid" />
+      </div>
+      <div class="image__card" id="image__card-3">
+        <img src="assets/grid-3.jpg" alt="grid" />
+      </div>
+      <div class="image__card" id="image__card-4">
+        <img src="assets/grid-4.jpg" alt="grid" />
+      </div>
+    </div>
+  <div class="name">
+    Andi Javier Alejandrino
+  </div>
+  <div class="details">
+    Welcome to Maniniyot, your window to the world through the lens of a passionate photographer. I specialize in capturing life's most exquisite moments and transforming them into art. My photographs tell stories, evoke emotions, and reveal the beauty in the everyday. Step into my world and let my images transport you to places both familiar and unknown, where every click of the camera creates a masterpiece. Explore my portfolio and embark on a visual journey that celebrates the art of photography in all its splendor.
+  </div>
+  <script>
+    var title = document.getElementById("title");
+    var bg_2 = document.getElementById("bg-2");
+    var bg_3 = document.getElementById("bg-3");
+
+    var image_card_1 = document.getElementById("image__card-1");
+    var image_card_2 = document.getElementById("image__card-2");
+    var image_card_3 = document.getElementById("image__card-3");
+    var image_card_4 = document.getElementById("image__card-4");
+
+    document.addEventListener("scroll", (event) => {
+      var positionY = window.scrollY;
+
+      title.style.fontSize = `${100 + positionY * 0.5}px`;
+
+      bg_2.style.top = `-${positionY * 0.5}px`;
+      bg_3.style.top = `-${positionY}px`;
+      bg_3.style.scale = 1 + positionY * 0.001;
+
+      image_card_1.style.transform = `translateY(${positionY * -0.5 + 400}px)`;
+
+      image_card_2.style.transform = `translateY(${positionY * 0.1 + -50}px)`;
+
+      image_card_3.style.transform = `translateY(${positionY * -0.1 + 100}px)`;
+
+      image_card_4.style.transform = `translateY(${positionY * 0.2 + -125}px)`;
+
+      var _newOpacity = positionY * 0.001;
+      if (_newOpacity >= 0 && _newOpacity <= 1) {
+        image_card_1.style.opacity = _newOpacity;
+        image_card_2.style.opacity = _newOpacity;
+        image_card_3.style.opacity = _newOpacity;
+        image_card_4.style.opacity = _newOpacity;
+      }
+    });
+  </script>
+    <section id="services"></section>
+    <div class="title__img2">
+      Services
+  </div>
+  <div class="services-1">
+    ID Picture <br>
+    Graduation Shoot <br>
+    Wedding Photoshoot <br>
+    Birthday Shoot <br>
+    Same Day Edit <br>
+    Cinematography <br>
+    Videography <br>
+    Product Branding <br>
+    Digital Marketing <br>
+    Graphic Editing <br>
+    Photobooth <br>
+  </div>
+    </ul>
+    <div class="video-container">
+      <video id="scroll-video" autoplay loop>
+        <source src="videos/Services.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="content">
+    <p>Sample Cinematography Video</p>
+</div>
+<script src="script.js"></script>
+  </div>
+  </script>
+  <section id="portfolio"></section>
+<div class="container">
+  <div class="slider-wrapper">
+    <button id="prev-slide" class="slide-button material-symbols-rounded">
+      <
+    </button>
+    <div class="title__img1">
+      Photo Collection
+  </div>
+    <ul class="image-list">
+      <img class="image-item" src="images/Yearbook-1.jpg" alt="img-1" />
+      <img class="image-item" src="images/Yearbook-2.jpg" alt="img-2" />
+      <img class="image-item" src="images/Wedding-1.jpg" alt="img-3" />
+      <img class="image-item" src="images/Wedding-2.jpg" alt="img-4" />
+      <img class="image-item" src="images/Halloween-1.jpg" alt="img-5" />
+      <img class="image-item" src="images/Halloween-2.jpg" alt="img-6" />
+      <img class="image-item" src="images/Music-1.jpg" alt="img-7" />
+      <img class="image-item" src="images/Music-2.jpg" alt="img-8" />
+      <img class="image-item" src="images/Beach-1.jpg" alt="img-9" />
+      <img class="image-item" src="images/Beach-2.jpg" alt="img-10" />
+    </ul>
+    <button id="next-slide" class="slide-button material-symbols-rounded">
+      >
+    </button>
+  </div>
+  <div class="slider-scrollbar">
+    <div class="scrollbar-track">
+      <div class="scrollbar-thumb"></div>
+    </div>
+  </div>
+</div>
+  <section id="contact"></section>
+  <div class="contact-title">
+    Maniniyot
+  </div>
+  <div class="contact-subtitle">
+    Photography
+  </div>
+  <div class="contact-1">
+  <b>For Inquiries</b> <br>
+  Email: Maniniyot@gmail.com <br>
+  Facebook: Maniniyot <br>
+  Twitter: Maniniyot_PH <br>
+  Instagram: Maniniyot_Photography
+  </div>
+  <div class="contact-2">
+    <b>Operating Hours</b> <br>
+    Monday to Friday: 8:00am - 9:00pm <br>
+    Saturday to Sunday: 10:00am - 11:00pm
+  </div>
+  <div class="footer__btn">
+    <button class="btnOpen">Contact</button>
+    <section class="box">
+        <div class="close">&times;</div>
+        <div class="circle">
+           <span class="contact-head"></span>
+          <span class="contact-body"></span>
+
+        <span class="slant-left"></span>
+        <span class="slant-right"></span>
+        </div>
+
+        <div class="contact-box">
+            <div>
+                <input type="email" class="email" required="required">
+                <label for="email">Email</label>
+             </div>
+    
+             <div>
+                <input type="text" class="full_name" required="required">
+                <label for="full_name">Full Name</label>
+             </div>
+             <div>
+                <input type="text" class="contact_num" required="required">
+                <label for="contact_num">Contact Number</label>
+             </div>
+    <button class="btnSubmit">Submit</button>
+            </div>
+
+            <div class="confirmation-box" style="display: none;">
+               <h2>Sent!</h2>
+                <div class="body-text">                  
+               </div>
+              <p> Thank You. </p>               
+               <button class="btnClose">Close</button>
+               </div>
+    </section>
+
+  </body>
+  <body>
+  </body>
+</html>
